@@ -5,13 +5,15 @@ import ContactData from "./ContactData/ContactData";
 class Checkout extends Component {
   state = {
     ingredients: null,
-    price: 0
+    totalPrice: 0
   };
   componentWillMount() {
     const query = new URLSearchParams(this.props.location.search);
     const ingredients = {};
     let price = 0;
     for (let param of query.entries()) {
+      console.log(param);
+
       if (param[0] === "price") {
         price = param[1];
       } else {
@@ -25,7 +27,7 @@ class Checkout extends Component {
   };
   checkoutContinuedHandler = () => {
     this.props.history.replace("/checkout/contact-data");
-    console.log(this.state.ingredients);
+    console.log(this.state);
   };
   render() {
     return (

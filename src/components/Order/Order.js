@@ -5,7 +5,7 @@ const order = props => {
     <div className={classes.Order}>
       <p>Ingredients: Salad(1)</p>
       <p>
-        Price <strong>Rs 50</strong>
+        Price <strong>Rs {props.price}</strong>
       </p>
     </div>
   );
